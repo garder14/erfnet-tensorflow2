@@ -22,7 +22,7 @@ def read_image(path, image_size):  # read image, and resize it to image_size
 def read_segmentation(path, image_size, id2label):  # read segmentation (class label for each pixel), and resize it to image_size
     seg = tf.io.read_file(path)
     seg = tf.image.decode_png(seg, channels=1, dtype=tf.uint8)
-    seg = tf.image.resize(seg, image_size, method='nearest') # resize with 'nearest' method to avoid creating new classes
+    seg = tf.image.resize(seg, image_size, method='nearest')  # resize with 'nearest' method to avoid creating new classes
     seg = tf.squeeze(seg)
     seg = tf.gather(id2label, tf.cast(seg, tf.int32))  # (image_size[0], image_size[1])
     return seg
