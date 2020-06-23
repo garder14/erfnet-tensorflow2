@@ -12,7 +12,7 @@ The above predictions are produced by a network trained for 67 epochs. The full 
 
 <img src="assets/iou_plot.png" width="70%">
 
-It should be noted that the inference time on Tesla P100 GPU is around 0.2 seconds per image.
+Furthermore, it should be noted that the inference time on Tesla P100 GPU is around 0.2 seconds per image.
 
 ## Software installation
 
