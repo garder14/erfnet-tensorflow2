@@ -1,4 +1,4 @@
-# EfficientDet - TensorFlow 2
+# ERFNet - TensorFlow 2
 
 This is an unofficial implementation of [ERFNet](http://www.robesafe.es/personal/eduardo.romera/pdfs/Romera17tits.pdf) for semantic segmentation on [Cityscapes dataset](https://www.cityscapes-dataset.com/).
 
