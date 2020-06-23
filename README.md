@@ -50,7 +50,7 @@ The weights are saved in the /saved_weights directory.
 ## Inference
 
 
-# References
+## References
 
 [1] [ERFNet: Efficient Residual Factorized ConvNet for Real-time Semantic Segmentation - E. Romera et al.](http://www.robesafe.es/personal/eduardo.romera/pdfs/Romera17tits.pdf)
 
