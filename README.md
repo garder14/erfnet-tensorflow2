@@ -18,7 +18,7 @@ Clone this repository:
 
 ```bash
 git clone https://github.com/garder14/erfnet-tensorflow2.git
-cd erfnet-tensorflow2
+cd erfnet-tensorflow2/
 ```
 
 Install the dependencies:
@@ -43,15 +43,20 @@ Now, to train the network, run the following command (more options are available
 python train.py --num_epochs 70 --batch_size 8 --evaluate_every 1 --save_weights_every 1
 ```
 
-A checkpoint is saved after each epoch, so you can always continue the training from where you left it. Note: once you run the training command, the latest checkpoint is restored, so you should remove the /checkpoints directory if you want to restart training.
+A checkpoint is saved after each epoch, so you can always continue the training from where you left it. Note: once you run the training command, the latest checkpoint is restored, so you should remove the checkpoints/ directory if you want to restart training.
 
-The weights are saved in the /saved_weights directory.
+The weights are saved in the saved_weights/ directory.
 
 ## Inference
 
+Run the following command to predict the semantic segmentation of every image in the test_images/ directory. Note that these are saved in the test_segmentations/ directory, and one has to specify the relative path to the model weights (you can use the pretrained weights pretrained/pretrained.h5).
+
+```bash
+python predict.py --weights pretrained/pretrained.h5
+```
 
 ## References
 
-[1] [ERFNet: Efficient Residual Factorized ConvNet for Real-time Semantic Segmentation - E. Romera et al.](http://www.robesafe.es/personal/eduardo.romera/pdfs/Romera17tits.pdf)
+* [E. Romera et al., "ERFNet: Efficient Residual Factorized ConvNet for Real-time Semantic Segmentation", 2017](http://www.robesafe.es/personal/eduardo.romera/pdfs/Romera17tits.pdf)
 
-[2] [ERFNet (Official PyTorch version)](https://github.com/Eromera/erfnet_pytorch)
+* [ERFNet (Official PyTorch version)](https://github.com/Eromera/erfnet_pytorch)
