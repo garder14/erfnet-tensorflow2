@@ -18,7 +18,7 @@ Clone this repository:
 
 ```bash
 git clone https://github.com/garder14/erfnet-tensorflow2.git
-cd erfnet-tensorflow2.git
+cd erfnet-tensorflow2
 ```
 
 Install the dependencies:
@@ -28,3 +28,24 @@ conda create -n tf-gpu tensorflow-gpu cudatoolkit=10.1
 conda activate tf-gpu
 pip install matplotlib=3.2.2 tensorflow_addons=0.10.0 Pillow=7.1.2
 ```
+
+## Training
+
+First, it is required to download the Cityscapes dataset. For this purpose, create an account [here](https://www.cityscapes-dataset.com/), and then run the following command with your username and password:
+
+```bash
+bash download_data.sh username password
+```
+
+Now, to train the network, run the following command (more options are available):
+
+```bash
+python train.py --num_epochs 70 --batch_size 8 --evaluate_every 1 --save_weights_every 1
+```
+
+A checkpoint is saved after each epoch, so you can always continue the training from where you left it. Note: once you run the training command, the latest checkpoint is restored, so you should remove the /checkpoints directory if you want to restart training.
+
+The weights are saved in the /saved_weights directory.
+
+## Inference
+
