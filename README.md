@@ -4,11 +4,13 @@ This is an unofficial implementation of [ERFNet](http://www.robesafe.es/personal
 
 ## Results
 
-segmentations_plot
+![](assets/test1.png)
+![](assets/test2.png)
+![](assets/test3.png)
 
-To achieve these results, I have trained the network for 70 epochs on a single Tesla P100 GPU (~10 hours), and have used the weights with the largest IoU score on validation set (0.7084 after epoch 67).
+To achieve these results, I have trained the network for 70 epochs on a single Tesla P100 GPU (~10 hours), and have used the weights with the largest IoU score on validation set (0.7084 after epoch 67). The evolution of validation score over epochs is shown below ([here](assets/iou_plot.pdf) with better quality):
 
-loss_plot
+<img src="assets/iou_plot.png" width="70%">
 
 The inference time on Tesla P100 GPU is ~0.2 seconds/image.
 
