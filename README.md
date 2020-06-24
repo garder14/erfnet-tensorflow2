@@ -8,7 +8,7 @@ This is an unofficial implementation of [ERFNet](http://www.robesafe.es/personal
 ![](assets/test2.png)
 ![](assets/test3.png)
 
-The above predictions are produced by a network trained for 67 epochs, which achieves a mean class IoU score of 0.7084 on the validation set. Overall, the training lasted 70 epochs (almost 10 hours on a single Tesla P100 GPU), but the checkpoint with maximum validation score was used for inference. The progression of this metric is shown below ([here](assets/iou_plot.pdf) with better quality):
+The above predictions are produced by a network trained for 67 epochs that achieves a mean class IoU score of 0.7084 on the validation set. To get this model, I completed 70 epochs (almost 10 hours on a single Tesla P100 GPU) and selected the checkpoint with maximum validation score. The progression of this metric is shown below ([here](assets/iou_plot.pdf) with better quality):
 
 <img src="assets/iou_plot.png" width="70%">
 
