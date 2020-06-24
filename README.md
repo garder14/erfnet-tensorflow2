@@ -49,7 +49,7 @@ By default, training resumes from the latest saved checkpoint. If the checkpoint
 
 ## Inference
 
-Run the following command to predict the semantic segmentation of every image in the test_images/ directory (note: results are saved in the test_segmentations/ directory). It is required to specify the location of the weights (you can use the pretrained weights pretrained/pretrained.h5, or any other weights saved during training in the saved_weights/ directory).
+Run the following command to predict the semantic segmentation of every image in the test_images/ directory (note: results are saved in the test_segmentations/ directory). It is required to specify the location of the weights (you can use either the pretrained weights or any other weights saved during training in the saved_weights/ directory).
 
 ```bash
 python predict.py --weights pretrained/pretrained.h5
