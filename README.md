@@ -8,11 +8,11 @@ This is an unofficial implementation of [ERFNet](http://www.robesafe.es/personal
 ![](assets/test2.png)
 ![](assets/test3.png)
 
-The above predictions are produced by a network trained for 67 epochs. The full training lasted 70 epochs (almost 10 hours on a single Tesla P100 GPU) but, as proposed by the authors, I used the checkpoint with the largest IoU score on the validation set (0.7084) for inference. The progression of this metric is shown below ([here](assets/iou_plot.pdf) with better quality):
+The above predictions are produced by a network trained for 67 epochs, which achieves a mean class IoU score of 0.7084 on the validation set. The full training lasted 70 epochs (almost 10 hours on a single Tesla P100 GPU), but I used the checkpoint with maximum validation score for inference. The progression of this metric is shown below ([here](assets/iou_plot.pdf) with better quality):
 
 <img src="assets/iou_plot.png" width="70%">
 
-Furthermore, it should be noted that the inference time on Tesla P100 GPU is around 0.2 seconds per image.
+Furthermore, the inference time on a Tesla P100 GPU is around 0.2 seconds per image.
 
 ## Software installation
 
@@ -28,28 +28,28 @@ Install the dependencies:
 ```bash
 conda create -n tf-gpu tensorflow-gpu cudatoolkit=10.1
 conda activate tf-gpu
-pip install matplotlib=3.2.2 tensorflow_addons=0.10.0 Pillow=7.1.2
+pip install tensorflow_addons==0.10.0 Pillow==7.1.2
 ```
 
 ## Training
 
-Before training the network, you need to download the Cityscapes dataset. For this purpose, create an account in [www.cityscapes-dataset.com](https://www.cityscapes-dataset.com/), and then run the following command, indicating your username and password:
+Before training the network, you need to download the Cityscapes dataset. For this purpose, create an account in [www.cityscapes-dataset.com](https://www.cityscapes-dataset.com/), and then run the following command (indicating your username and password):
 
 ```bash
 bash download_data.sh username password
 ```
 
-After that, to train the network, run the following command:
+To train the network, run the following command:
 
 ```bash
 python train.py --num_epochs 70 --batch_size 8 --evaluate_every 1 --save_weights_every 1
 ```
 
-Take into account that a checkpoint is saved after each epoch, so you can always stop the training and continue later. However, if you want to restart training from scratch, you should remove the checkpoints/ directory to avoid the latest checkpoint being restored.
+By default, training resumes from the latest saved checkpoint. If the checkpoints/ directory is missing, training starts from epoch 0.
 
 ## Inference
 
-Run the following command to predict the semantic segmentation of every image in the test_images/ directory (generated in the test_segmentations/ directory). It is required to specify the location of the weights (you can use the pretrained weights pretrained/pretrained.h5, or any of the weights created during your own training in the saved_weights/ directory).
+Run the following command to predict the semantic segmentation of every image in the test_images/ directory (note: results are generated in the test_segmentations/ directory). It is required to specify the location of the weights (you can use the pretrained weights pretrained/pretrained.h5, or any other weights saved during your own training in the saved_weights/ directory).
 
 ```bash
 python predict.py --weights pretrained/pretrained.h5
