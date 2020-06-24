@@ -59,4 +59,4 @@ python predict.py --weights pretrained/pretrained.h5
 
 * [E. Romera et al., "ERFNet: Efficient Residual Factorized ConvNet for Real-time Semantic Segmentation", 2017](http://www.robesafe.es/personal/eduardo.romera/pdfs/Romera17tits.pdf)
 
-* [ERFNet (Official PyTorch version)](https://github.com/Eromera/erfnet_pytorch)
+* [Official PyTorch implementation of ERFNet)](https://github.com/Eromera/erfnet_pytorch)
