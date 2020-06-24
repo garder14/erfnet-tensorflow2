@@ -45,11 +45,11 @@ To train the network, run the following command:
 python train.py --num_epochs 70 --batch_size 8 --evaluate_every 1 --save_weights_every 1
 ```
 
-By default, training resumes from the latest saved checkpoint. If the checkpoints/ directory is missing, training starts from epoch 0.
+By default, training resumes from the latest saved checkpoint. If the checkpoints/ directory is missing, training starts from zero.
 
 ## Inference
 
-Run the following command to predict the semantic segmentation of every image in the test_images/ directory (note: results are generated in the test_segmentations/ directory). It is required to specify the location of the weights (you can use the pretrained weights pretrained/pretrained.h5, or any other weights saved during your own training in the saved_weights/ directory).
+Run the following command to predict the semantic segmentation of every image in the test_images/ directory (note: results are saved in the test_segmentations/ directory). It is required to specify the location of the weights (you can use the pretrained weights pretrained/pretrained.h5, or any other weights saved during training in the saved_weights/ directory).
 
 ```bash
 python predict.py --weights pretrained/pretrained.h5
