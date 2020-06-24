@@ -33,7 +33,7 @@ pip install tensorflow_addons==0.10.0 Pillow==7.1.2
 
 ## Training
 
-Before training the network, you need to download the Cityscapes dataset. For this purpose, create an account in [www.cityscapes-dataset.com](https://www.cityscapes-dataset.com/), and then run the following command (indicating your username and password):
+Before training the network, you need to download the Cityscapes dataset. For this purpose, create an account in [www.cityscapes-dataset.com](https://www.cityscapes-dataset.com/), and run the following command (indicating your username and password):
 
 ```bash
 bash download_data.sh username password
