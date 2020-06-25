@@ -39,13 +39,13 @@ Before training the network, you need to download the Cityscapes dataset. For th
 bash download_data.sh username password
 ```
 
-To train the network, run the following command:
+To train the network, run this command:
 
 ```bash
 python train.py --num_epochs 70 --batch_size 8 --evaluate_every 1 --save_weights_every 1
 ```
 
-By default, training resumes from the latest saved checkpoint. If the checkpoints/ directory is missing, training starts from zero.
+By default, training resumes from the latest saved checkpoint. If the checkpoints/ directory is missing, the training starts from zero.
 
 ## Inference
 
