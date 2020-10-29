@@ -10,7 +10,7 @@ This is an unofficial implementation of [ERFNet](http://www.robesafe.es/personal
 
 The above predictions are produced by a network trained for 67 epochs that achieves a mean class IoU score of 0.7084 on the validation set. To get this model, I completed 70 epochs (almost 10 hours on a single Tesla P100 GPU) and selected the checkpoint with maximum validation score. The progression of this metric is shown below.
 
-<img src="assets/iou_plot.png" width="70%">
+<img src="assets/iou_plot.png" width="75%">
 
 The inference time on a Tesla P100 GPU is around 0.2 seconds per image.
 
